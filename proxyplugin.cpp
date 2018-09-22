@@ -13,7 +13,7 @@ QString ProxyPlugin::pluginName() const
     return QStringLiteral("proxy");
 }
 
-WebApplication *ProxyPlugin::createApplication(const QJsonObject &config) const
+WebApplication *ProxyPlugin::createApplication(const QJsonObject &config, WebServer &webServer) const
 {
-    return new ProxyApplication(config);
+    return new ProxyApplication(config, webServer);
 }
